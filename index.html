@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Semana de Tecnologia</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="imgs/logo.png">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>	
+	<script>
+		function setDiv(dia) {
+				var dia6 = document.getElementById("lidia6");
+				var dia5 = document.getElementById("lidia5");
+				
+			if(dia == 5){
+				//#dia5
+				document.getElementById("dia6").style.display = "none";
+				dia6.removeAttribute ("class");
+				document.getElementById("dia5").style.display = "block";
+				
+				dia5.setAttribute("class", "active");
+				
+				
+			}
+			if(dia == 6){
+				//#dia6
+				document.getElementById("dia5").style.display = "none";
+				document.getElementById("dia6").style.display = "block";				
+				dia5.removeAttribute ("class");
+				dia6.setAttribute("class", "active");
+				
+				
+			}
+		}
+
+		$(document).ready(function(){
+			
+			$('#cur-2').hide();
+
+			$(".menu").click(function() {
+				$('#contCursoDefault').hide();
+		    	$($(this).attr('menu')).toggle();
+			});
+		});
+
+		
+
+		
+
+	</script>
+	</head>
+	<body>
+
+<header class="navbar navbar-default navbar-static-top" style="background-color:#838C95;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="navbar-header">
+				<a href="http://fatecsjc.edu.br/" class="navbar-brand"><img src="imgs/logo_fatecsjc2.png" /></a>
+				</div>
+			</div>
+			<div class="col-md-9 text-center" id="titulo">
+				Semana de Tecnologia
+			</div>
+		</div>
+    </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+	<div class="row">
+		<div class="row">	
+      		<div id="conteudo" class="col-md-12">
+			
+				<ul class="nav nav-tabs nav-rtl">
+				  
+				  <li role="presentation" id="lidia6" ><a  onclick="setDiv(6)">Dia 6</a></li>
+				  <li role="presentation" id="lidia5" class="active"><a onclick="setDiv(5)">Dia 5</a></li>
+				  
+				</ul>
+				<div id="dia5" class="row">
+					<br>
+					<div class="col-md-3" id="leftCol">
+						<div class="well" style="color:#000;"> 
+						<ul class="nav nav-tabs nav-stacked" id="sidebar">
+						  <li class="menu" menu="#cur-1"><a href="#cur-1">Treinamento Maratona de Programação</a></li>
+						  <li class="menu" menu="#cur-2"><a href="#cur-2">Excel Avançado</a></li>
+						  <li class="menu" menu="#cur-3"><a href="#cur-3">TDD - Test Driven Development</a></li>
+						  <li class="menu" menu="#cur-4"><a href="#cur-4">Versionamento</a></li>
+						  <li class="menu" menu="#cur-5"><a href="#cur-5">Desenvolvimento Android</a></li>
+						  <li class="menu" menu="#cur-6"><a href="#cur-6">Corel + PhotoShop</a></li>
+						</ul>
+						</div>
+					</div> 
+							
+					<div id="contCursoDefault" class="col-md-9">
+						<h2 id="sec0">Content</h2>
+						<div id="bannerCurso" class="row">
+							<img src="" />
+						</div>
+						<div class="col-md-12" id="desCurso" style="margin-top:10px">
+						Aproveite a programação ! <br>
+						Você pode se inscrever em mais de um curso.
+						</div>
+					</div>
+
+					<div id="cur-2" class="col-md-9">
+						<h2 id="sec0">Excel Avançado</h2>
+						<div id="bannerCurso" class="row">
+							<img src="imgs/excel.jpg" />
+						</div>
+						<div id="desCurso" style="margin-top:10px">
+						Público Alvo: Este curso destina-se a pessoas que queiram conhecer recursos avançados do Excel. <br>
+
+						Requisitos: Noções Básicas de Excel <br>
+
+						Carga Horária: 2 horas<br>
+
+						Conteúdo: <br><br>
+						<ol>
+							<li>Funções Lógicas</li>
+								<ul>
+									<li>Função SE Simples e SE Composta</li>
+									<li>Função E</li>
+									<li>Função OU</li>
+								</ul>
+							<li>Funções de Pesquisa</li>
+								<ul>
+									<li>PROCV e PROCH</li>
+								</ul>
+							<li>Formulários</li>
+								<ul>
+									<li>Entrando com Dados via Formulário</li>
+								</ul>
+							<li>Tabela Dinâmica</li>
+								<ul>
+									<li>Entrando com Dados via Formulário</li>
+									<li>Segmentação de dados</li>
+									<li>Gráfico Dinâmico</li>
+								</ul>
+							<li>Filtro Avançado</li>
+							<li>Macro</li>
+						</ol>
+
+						<br>
+						<a href="https://docs.google.com/forms/d/1HtvsxCDeiMQGAvAzAhfpP77DJgQmJC-QR1a5LDq_jT0/viewform?c=0&w=1" class="btn btn-primary btn-lg" target="_blank">Inscreva-se !</a>
+						</div>
+					</div>
+
+					<div id="cur-3" class="col-md-9">
+						<h2 id="sec0">ETDD (Test Driven Development)</h2>
+						<div id="bannerCurso" class="row">
+							<img src="imgs/tdd.jpg" class="col-md-9" />
+						</div>
+						<div id="desCurso" style="margin-top:10px">
+						TDD é o desenvolvimento orientado a teste, o software é desenvolvido baseado em teste, ajudando na precaução contra erros, aumento na qualidade do software, redução de retrabalho e manutenção. <br><br>
+
+						Objetivo <br>
+
+					    Explicar o que é este método de desenvolvimento, qual sua finalidade e seus benefícios. <br>
+
+					    No final do curso será apresentado uma demo (aula prática)<br><br>
+						<br>
+						<a href="https://docs.google.com/forms/d/1HtvsxCDeiMQGAvAzAhfpP77DJgQmJC-QR1a5LDq_jT0/viewform?c=0&w=1" class="btn btn-primary btn-lg" target="_blank">Inscreva-se !</a>
+						</div>
+					</div>
+
+
+				</div>
+
+				
+				
+				<div id="dia6" class="row" >
+					<br>
+					<div class="col-md-3" id="leftCol">
+						<div class="well"> 
+						<ul class="nav nav-stacked" id="sidebar">
+						  <li><a href="#cur1">Curso 1</a></li>
+						  <li><a href="#cur2">Curso 2</a></li>
+						  <li><a href="#cur3">Curso 3</a></li>
+						  <li><a href="#cur4">Curso 4</a></li>
+						  <li><a href="#cur4">Curso 5</a></li>
+						</ul>
+						</div>
+					</div> 
+							
+					<div id="contCursoDefault2" class="col-md-9">
+						<h2 id="sec0">Content dia 6</h2>
+						<div id="bannerCurso" class="row">
+							<img src="" />
+						</div>
+						<div class="col-md-12" id="desCurso" style="margin-top:10px">
+						Aproveite a programação ! <br>
+						Você pode se inscrever em mais de um curso.
+						</div>
+					</div>
+
+					<div id="cur1">
+						
+					</div>
+				</div>
+              	
+    
+              	
+      		</div> 
+      		
+		</div>	
+			<br>
+		<div id="prog" class="row">
+		  <div class="col-md-12">
+			<div class="panel panel-default">
+			  <div class="panel-heading"><h3>Programação</h3></div>
+			  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+			  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
+			  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+			  Aliquam in felis sit amet augue.
+			  </div>
+			</div>
+		  </div>
+			
+		</div>
+  	</div>
+</div>
+
+	<!-- script references -->
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</body>
+</html>
