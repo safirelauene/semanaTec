@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Semana de Tecnologia</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="shortcut icon" href="imgs/logo.png">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	
+
+	<script>
+		function setDiv(dia) {
+				var dia6 = document.getElementById("lidia6");
+				
+				var dia5 = document.getElementById("lidia5");
+				
+				 				
+			if(dia == 5){
+				//#dia5
+				document.getElementById("dia6").style.display = "none";
+				dia6.removeAttribute ("class");
+				document.getElementById("dia5").style.display = "block";
+				
+				dia5.setAttribute("class", "active");
+				
+				
+			}
+			if(dia == 6){
+				//#dia6
+				document.getElementById("dia5").style.display = "none";
+				document.getElementById("dia6").style.display = "block";				
+				dia5.removeAttribute ("class");
+				dia6.setAttribute("class", "active");
+				
+				
+			}
+
+			
+		}
+
+
+		var cursos=[];
+
+		cursos[1] = {Nome:"Treinamento Maratona de Programação", Imagem:"",Publico:" ", Requisitos:"",Cargahoraria:"", Conteudo:""};
+
+		cursos[2] = {Nome:"Excel Básico", Imagem:"",Publico:"Todos os alunos e profissionais que desejam conhecer a ferramenta MS Excel.", Requisitos:"Não Há requisitos",Cargahoraria:"1:45 horas", Conteudo:"<ol><li>Apresentação da Ferramenta</li><li>Apresentação da Interface</li><li>Inclusão de Dados</li><li>Conceito de Formato de Dados</li><li>Introdução a Formulas</li><li>Cálculos em MS Excel</li><li>Introdução a Lógica</li></ol>"};
+
+		cursos[3] = {Nome:"ETDD (Test Driven Development)", Imagem:"imgs/tdd.jpg", Publico:" Alunos do 1º & 2º semestre de Banco de Dados (e interessados) ", Requisitos:" Não possui nenhum requisito.",Cargahoraria:" 2 horas", Conteudo:"TDD é o desenvolvimento orientado a teste, o software é desenvolvido baseado em teste, ajudando na precaução contra erros, aumento na qualidade do software, redução de retrabalho e manutenção. <br><br>Objetivo<br>Explicar o que é este método de desenvolvimento, qual sua finalidade e seus benefícios. <br> No final do curso será apresentado uma demo (aula prática)"};
+
+		cursos[4] = {Nome:"Versionamento – GIT", Imagem:"imgs/github.png",Publico:" Alunos e interessados.", Requisitos:" Não possui nenhum requisito.",Cargahoraria:"", Conteudo:"<ol><li>Fluxo de Trabalho</li><li>Instalação</li><li>Criando o Primeiro Repositório</li><li>Comandos Básicos</li><li>Primeiro commit</li><li>Criando uma conta no GITHUB</li><li>Logar com sua conta GITHUB</li><li>Enviar/receber alterações</li><li>Clonar um Projeto</li><li>Fork do Projeto</li><li>Criando ramificações</li><li>Fazendo o Merge</li><li>Tratando um conflito</li><li>Criando tags</li><li>Voltando versões no projeto</li><li>Criando tarefas no GITHUB</li></ol>"};
+
+		cursos[5] = {Nome:"Desenvolvimento Android", Imagem:"imgs/android.jpg",Publico:" Alunos do 1° e 2° semestre dos cursos de B.D e A.D.S.", Requisitos:" Quem possuir Smarthphone com sistema operacional Android é recomendado trazer juntamente com um cabo USB.",Cargahoraria:" 2 horas", Conteudo:"<ol><li>Android Studio</li><li>Android e Java</li><li>JDK</li><li>Download e Instalação do Android Studio e JDK</li><li>Criando um projeto android</li><li>Gradle</li><li>Estrutura de um projeto no Android Studio</li><li>activities</li><li>services</li><li>broadcast receivers</li><li>content providers</li><li>Intent</li><li>Layout</li><li>Criação de uma aplicação simples</li></ol>"};
+
+		cursos[6] = {Nome:"Coreldraw e Photoshop", Imagem:"imgs/psd.jpg",Publico:" Este  curso destina-se a qualquer um que tenha interesse.", Requisitos:" Não possui nenhum requisito.",Cargahoraria:" 2 horas.", Conteudo:" Este curso tem como objetivo ensinar os alunos a usar as ferramentas básicas de criação e edição de fotos, logos e outras imagens por meio dos programas Coreldraw  e Adobe Photoshop, além de ensinar a configurar a imagem de acordo com o meio onde ela será exibida(impressão colorida, preto e branco, em monitores, projetores, etc) "};
+
+		cursos[7] = {Nome:"Mini Maratona de Programação", Imagem:"",Publico:" ", Requisitos:"",Cargahoraria:"", Conteudo:""};
+
+		cursos[8] = {Nome:"Conectividade Doméstica", Imagem:"imgs/conectividadedomestica.jpg",Publico:" ", Requisitos:"",Cargahoraria:"", Conteudo:""};
+
+		cursos[9] = {Nome:"Linux Básico", Imagem:"imgs/linux.jpg",Publico:" Aeronáutica, Logística, GPI até o 6 semestre. Cursos de Informática até o 3 semestre.", Requisitos:"  Não possui nenhum requisito.",Cargahoraria:" 2 horas", Conteudo:" <ol><li>Introdução ao Linux</li><li>Instalação do Sistema</li><li>Segurança</li><li>Estrutura de organização dos diretórios</li><li>Apresentação dos Ambientes de Trabalho</li><li>Apresentação dos Menus</li><li>Utilização do Gerenciador de Arquivos</li><li>Instalação e Remoção de Pacotes usando Package Manager</li><li>Configurações Básicas de Rede</li><li>Linha de comando</li></ol>"};
+
+		cursos[10] = {Nome:"Django", Imagem:"imgs/django.jpg",Publico:" Estudantes da área de TI.", Requisitos:"  Não possui nenhum requisito.",Cargahoraria:" 1h35", Conteudo:" <ol><li>O que é Django?</li><li>Instalação do Django</li><ul><li>Ambiente virtual</li><li>Trabalhando com o virtualenv</li><li>Instalação do Django no ambiente</li><li>Configuração</li><li>Instalação de um banco de dados</li></ul><li>Criação de projeto em Django</li><ul><li>Criação e ativação das models</li><li>Utilização da API</li><li>Administração do Django</li><li>Personalização</li></ul></ol>"};
+
+		cursos[11] = {Nome:"Excel Avançado", Imagem:"imgs/excel.jpg",Publico:"Este curso destina-se a pessoas que queiram conhecer recursos avançados do Excel. ", Requisitos:"Noções Básicas de Excel ",Cargahoraria:"2h", Conteudo:"<ol><li>Funções Lógicas</li><ul><li>Função SE Simples e SE Composta</li><li>Função E</li><li>Função OU</li></ul><li>Funções de Pesquisa</li><ul><li>PROCV e PROCH</li></ul><li>Formulários</li><ul><li>Entrando com Dados via Formulário</li></ul><li>Tabela Dinâmica</li><ul><li>Entrando com Dados via Formulário</li><li>Segmentação de dados</li><li>Gráfico Dinâmico</li></ul><li>Filtro Avançado</li><li>Macro</li></ol>"};
+
+		cursos[12] = {Nome:"Boas Práticas de Programação", Imagem:"imgs/praticas.jpg",Publico:" ", Requisitos:"",Cargahoraria:"", Conteudo:""};
+
+		cursos[13] = {Nome:"Testes Funcionais", Imagem:"",Publico:" ", Requisitos:"",Cargahoraria:"", Conteudo:""};
+		
+		cursos[14] = {Nome:"CRUD", Imagem:"imgs/crud.jpg",Publico:" Iniciantes na programação ou interessados nas linguagens e tecnologias do curso;<br><br>Desenvolvimento de um CRUD simples usando um WebService em Python,AngularJS e BootStrap.<br><br>Proposta:<br>Apresentar aos participantes a facilidade e flexibilidade de desenvolvimento em Python, a possibilidade de criar páginas intuitivas com BootStrap e a capacidade de resposta quase imediata do AngularJS para JavaScript.<br>", Requisitos:"",Cargahoraria:"", Conteudo:" <ol><li>Desenvolvimento de WebService em Python</li><ul><li>Apresentação do Flask (Framework Web</li><li>Padrão MTV</li><li>Flask-RESTFul</li></ul><li>Desenvolvimento de tela em Angular e Bootstrap</li><ul><li>Formatação do design de tela com Bootstrap</li><li>Criação de um formulário para gravação em AngularJS</li><li>Validação do formulário com Angular e com Bootstrap</li><li>Consulta dos dados com AngularJS</li></ul></ol>"};
+
+		
+
+		function criar(n){
+		document.getElementById("contCursoDefault").style.display = "none";
+		document.getElementById("curso").innerHTML =
+		"<h2>"+cursos[n].Nome+"</h2><div id='bannerCurso' class='row'><img class='col-md-12' src='"+cursos[n].Imagem+"'/></div><br>Público Alvo:"+cursos[n].Publico+"<br>Requisitos:"+cursos[n].Requisitos+"<br>Carga Horária:"+cursos[n].Cargahoraria+"<br>Conteúdo: <br><br>"+cursos[n].Conteudo;
+		}
+
+		function criar2(n){
+		document.getElementById("contCursoDefault2").style.display = "none";
+		document.getElementById("curso2").innerHTML =
+		"<h2>"+cursos[n].Nome+"</h2><div id='bannerCurso' class='row'><img class='col-md-12' src='"+cursos[n].Imagem+"'/></div><br><p>Público Alvo:"+cursos[n].Publico+"</p><br><p>Requisitos:"+cursos[n].Requisitos+"</p><br><p>Carga Horária:"+cursos[n].Cargahoraria+"</p><br>Conteúdo: <br><br>"+cursos[n].Conteudo;
+		}
+
+	</script>
+	</head>
+	<body>
+
+<header class="navbar navbar-default navbar-static-top" style="background-color:#838C95;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="navbar-header">
+				<a href="http://fatecsjc.edu.br/" class="navbar-brand"><img src="imgs/logo_fatecsjc2.png" /></a>
+				</div>
+			</div>
+			<div class="col-md-9 text-center" id="titulo">
+				Semana de Tecnologia
+			</div>
+		</div>
+    </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+	<div class="row">
+		<div class="row">	
+      		<div id="conteudo" class="col-md-12">
+			
+				<ul class="nav nav-tabs ">
+				  
+				  <li role="presentation" id="lidia5" class="active"><a onclick="setDiv(5)">Dia 5</a></li>
+				  <li role="presentation" id="lidia6" ><a  onclick="setDiv(6)">Dia 6</a></li>
+				  
+				  
+				</ul>
+				<div id="dia5" class="row">
+					<br>
+					<div class="col-md-3" id="leftCol">
+						<div class="well" style="color:#000;"> 
+						<ul class="nav nav-tabs nav-stacked" id="sidebar">
+						  <li onclick="criar(1)"><a class="a_li">Treinamento Maratona de Programação</a></li>
+						  <li onclick="criar(2)"><a class="a_li">Excel Básico</a></li>
+						  <li onclick="criar(3)"><a class="a_li">TDD - Test Driven Development</a></li>
+						  <li onclick="criar(4)"><a class="a_li">Versionamento</a></li>
+						  <li onclick="criar(5)"><a class="a_li">Desenvolvimento Android</a></li>
+						  <li onclick="criar(6)"><a class="a_li">Corel + PhotoShop</a></li>
+						  <li onclick="criar(14)"><a class="a_li">CRUD</a></li>
+						</ul>
+						</div>
+					</div> 
+							
+					<div id="contCursoDefault" class="col-md-9">
+						<h2 id="sec0"></h2>
+						<div id="bannerCurso" class="row">
+							<img src="" />
+						</div>
+						<div class="col-md-12" id="desCurso" style="margin-top:10px;font-size:17px;">
+						Aproveite a programação ! <br>
+						Você pode se inscrever em mais de um curso. <br>
+						Saiba detalhes de cada curso selecionando o dia.
+						</div>
+					</div>
+
+					<div class="col-md-9">
+						<div id="curso">
+							
+						</div>
+						<br>
+						<a href="https://docs.google.com/forms/d/1HtvsxCDeiMQGAvAzAhfpP77DJgQmJC-QR1a5LDq_jT0/viewform?c=0&w=1" class="btn btn-primary btn-lg" target="_blank">Inscreva-se !</a>
+					</div>
+
+				</div>
+
+				
+				
+				<div id="dia6" class="row" >
+					<br>
+					<div class="col-md-3" id="leftCol">
+						<div class="well"> 
+						<ul class="nav nav-stacked" id="sidebar">
+						  <li onclick="criar2(7)"><a class="a_li">Mini Maratona de Programação</a></li>
+						  <li onclick="criar2(8)"><a class="a_li">Conectividade Doméstica</a></li>
+						  <li onclick="criar2(9)"><a class="a_li">Linux Básico</a></li>
+						  <li onclick="criar2(10)"><a class="a_li">Django</a></li>
+						  <li onclick="criar2(11)"><a class="a_li">Excel Avançado</a></li>
+						  <li onclick="criar2(12)"><a class="a_li">Boas Práticas de Programação</a></li>
+						  <li onclick="criar2(13)"><a class="a_li">Testes Funcionais</a></li>
+						</ul>
+						</div>
+					</div> 
+							
+					<div id="contCursoDefault2" class="col-md-9">
+						<h2 id="sec0"></h2>
+						<div id="bannerCurso" class="row">
+							<img src="" />
+						</div>
+						<div class="col-md-12" id="desCurso" style="margin-top:10px;font-size:17px;">
+						Aproveite a programação ! <br>
+						Você pode se inscrever em mais de um curso. <br>
+						Saiba detalhes de cada curso selecionando o dia.
+						</div>
+					</div>
+
+					<div class="col-md-9">
+						<div id="curso2">
+							
+						</div>
+						<br>
+						<a href="https://docs.google.com/forms/d/1HtvsxCDeiMQGAvAzAhfpP77DJgQmJC-QR1a5LDq_jT0/viewform?c=0&w=1" class="btn btn-primary btn-lg" target="_blank">Inscreva-se !</a>
+					</div>
+				</div>
+              	
+    
+              	
+      		</div> 
+      		
+		</div>	
+			<br>
+		<div id="prog" class="row">
+		  <div class="col-md-12">
+			<div class="panel panel-default">
+			  <div class="panel-heading"><h3>Programação</h3></div>
+			  <div class="panel-body" >
+				<!-- inicio tabs programacao -->
+					<ul id="tabs" class="nav nav-tabs" data-tabs="tabs">  
+					  <li class="active"><a href="#dia5m" data-toggle="tab">Dia 5 - Manhã</a></li>
+					  <li ><a href="#dia5n" data-toggle="tab">Dia 5 - Noite</a></li>
+					  <li ><a href="#dia6m" data-toggle="tab">Dia 6 - Manhã</a></li>
+					  <li ><a href="#dia6n" data-toggle="tab">Dia 6 - Noite</a></li>
+					</ul>
+					<div id="my-tab-content" class="tab-content">
+						<div id="dia5m" class="tab-pane active" >
+							<table width="710" class="t" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td colspan="9" class="tabela" >Quinta-feira - Manhã</td>
+							  </tr>
+							  <tr>
+								<td width="55" class="horario"></td>
+								   <td class="colorido local">Pátio</td>
+								   <td class="colorido local">311</td>
+								<td class="colorido local">304</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">106</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">7:00</td>
+								<td class="colorido amarelin">Credenciamento</td>
+								<td rowspan="3" class="colorido cecompi">Treinamento Maratona de Programação - 1º ADS</td>
+								<td></td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">8:00</td>
+								<td rowspan="3" class="colorido cecompi">Evento Cultural - Vicentina Aranha</td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">9:00</td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">9:40</td>
+
+								<td colspan="7">Intervalo</td>
+							  </tr>
+							  <tr>
+								<td  rowspan="2" class="colorido horario">10:00</td>
+								<td></td>
+								<td rowspan="5" class="colorido cecompi">Treinamento Maratona de Programação - 1º ADS</td>
+								<td rowspan="5" class="colorido cecompi "><div>CECOMPI</div><div> Business Camp</div></td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="colorido dip"><div>DIP/ P. Integrador/</div><div>APP 1º ao 4º AMD/</div><div>Log/ADS</div></td>
+							  </tr>
+							  <tr>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td rowspan="2" class="colorido horario">10:40</td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td></td>
+
+							  </tr>
+							  <tr>
+								<td class="colorido horario">12:00</td>
+								<td></td>
+							  </tr>
+							</table>
+						</div>
+
+						<div id="dia5n" class="tab-pane" >
+							<table width="710" class="t" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td colspan="10" class="tabela">Quinta-feira - Noite</td>
+							  </tr>
+							  <tr>
+								<td width="55" class="horario"></td>
+								   <td class="colorido local">Auditório</td>
+								   <td class="colorido local">Pátio</td>
+								   <td class="colorido local">311</td>
+								<td class="colorido local">312</td>
+								<td class="colorido local">3xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">18:45</td>
+								<td></td>
+								<td class="colorido amarelin">Credenciamento</td>
+
+								<td></td>
+								<td></td>
+								<td></td>
+								<td rowspan="3" class="minicursos">Curso Excel Básico</td>
+								<td rowspan="3" class="minicursos">Curso Versionamento</td>
+								<td rowspan="3" class="minicursos">Curso CRUD Simples</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">19:00</td>
+								<td class="colorido cimatech">Abertura do EUCA</td>
+								<td></td>
+								<td rowspan="2" class="colorido cecompi"><div>EUCA</div><div>(CATIA-LAB)</div></td>
+								<td rowspan="2" class="colorido cecompi"><div>EUCA</div><div>(CATIA-LAB)</div></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">19:40</td>
+								<td></td>
+								<td></td>
+							  
+							  </tr>
+							  <tr>
+								<td class="colorido horario">20:20</td>
+								<td colspan="7" class="colorido cecompi">Intervalo / Evento Cultural - Vicentina Aranha</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">21:00</td>
+								<td></td>
+								<td></td>
+								<td rowspan="5" class="colorido cecompi"><div>EUCA</div><div>(CATIA-LAB)</div></td>
+									<td rowspan="5" class="colorido cecompi"><div>EUCA</div><div>(CATIA-LAB)</div></td>
+								<td></td>
+								<td rowspan="5" class="minicursos">Curso TDD</td>
+								<td rowspan="5" class="minicursos">Curso Desenvolvimento Android</td>
+								<td rowspan="5" class="minicursos">Curso Corel + PhotoShop</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">21:25</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">22:15</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario"></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">23:05</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							  </tr>
+							</table>
+						</div>
+
+						<div id="dia6m" class="tab-pane" >
+							<table width="710" class="t" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td colspan="10" class="tabela">Sexta-feira - Manhã</td>
+							  </tr>
+							  <tr>
+								<td width="55" class="horario"></td>
+
+								   <td class="colorido local">Pátio</td>
+								   <td class="colorido local">311</td>
+								<td class="colorido local">312</td>
+								<td class="colorido local">304</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">106</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">7:00</td>
+
+								<td></td>
+								<td rowspan="9" class="colorido dip"><div>Mini Maratona de Programação</div> 
+								<td rowspan="9" class="colorido dip"><div>Mini Maratona de Programação</div> 
+								<div>- 1º ADS</div></td>
+								<td></td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td rowspan="3" class="minicursos">mini curso</td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">8:00</td>
+								<td class="colorido amarelin">Credenciamento</td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">9:00</td>
+								<td rowspan="2" class="colorido cecompi">Evento Cultural - Vicentina Aranha</td>
+								<td></td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">9:40</td>
+								<td colspan="5">Intervalo</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">10:30</td>
+								<td></td>
+								<td rowspan="5" class="colorido cecompi"><div>CECOMPI</div><div> Business Camp</div></td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="minicursos">mini curso</td>
+								<td rowspan="5" class="colorido dip"><div>IP/ P. Integrador/</div><div>APP 1º ao 4º AMD/</div><div>Log/ADDS</div></td>
+							  </tr>
+							  <tr>
+								<td rowspan="3" class="colorido horario" >11:10</td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">12:00</td>
+								<td></td>
+							  </tr>
+							</table>
+						</div>
+
+						<div id="dia6n" class="tab-pane" >
+							<table width="650" class="t" cellspacing="0" cellpadding="0">
+							  <tr>
+								<td colspan="9" class="tabela">Sexta-feira - Noite</td>
+							  </tr>
+							  <tr>
+								<td width="55" class="horario"></td>
+								   <td class="colorido local">Pátio</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+								<td class="colorido local">4xx</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">18:45</td>
+								<td class="colorido amarelin">credenciamento</td>
+								<td rowspan="3" class="minicursos">Curso Conectividade Domestica</td>
+								<td rowspan="3" class="minicursos">Curso Linux</td>
+								<td rowspan="3" class="minicursos">Curso Django</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">19:00</td>
+								<td></td>
+							  </tr>
+							  <tr>
+								<td  class="colorido horario">19:40</td>
+								 <td></td>
+							  </tr>
+
+							  <tr>
+								<td class="colorido horario">20:20</td>
+								<td colspan="4">intervalo</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">21:15</td>
+								<td></td>
+								<td rowspan="5" class="minicursos">Curso Excel Avançado</td>
+								<td rowspan="5" class="minicursos">Curso Praticas de Programação</td>
+								<td rowspan="5" class="minicursos">Curso Testes Funcionais</td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">21:25</td>
+								 <td></td>
+
+
+							  </tr>
+							  <tr>
+								<td class="colorido horario">22:15</td>
+								 <td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario"></td>
+								 <td></td>
+							  </tr>
+							  <tr>
+								<td class="colorido horario">23:05</td>
+								 <td></td>
+							  </tr>
+							</table>				
+						</div>
+
+					</div>
+			  </div>
+			</div>
+		  </div>
+			
+		</div>
+  	</div>
+</div>
+
+	<!-- script references -->
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function ($) {
+				$('#tabs').tabs();
+			});
+		</script>
+	</body>
+</html>
