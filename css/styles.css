@@ -1,0 +1,81 @@
+header {
+	margin-bottom:30px;
+	background-color: #838C95;
+	text-align : center;
+}
+#titulo{
+	color: #fff;
+	font-size: 50px;
+	line-height: 60px;
+	font-family: raleway-bold, sans-serif;
+	text-shadow:0px 1px 5px rgba(0, 0, 0, .3);
+	margin-top: 22px;
+	left: 20px;
+	
+}
+.a_li{
+	color :#27282D;	
+}
+
+#dia6{
+	display:none;
+}
+
+*{font-family:Tahoma, Geneva, sans-serif;}
+.t{
+	background-color:#EEE;
+	
+	text-align:center;
+
+	font-size: 12px; 
+	
+	border-radius:0px 0px 20px 20px;
+	overflow:hidden;
+}
+noite{ font-size:12px	}
+td{ 
+	height:20px;
+	border: 1px solid white;
+	padding: 2px;
+}
+
+#curso{
+	font-size:17px;
+}
+
+#curso2{
+	font-size:17px;
+}
+
+.minicursos{
+	background: #699;
+	color:#FFF;width: 80px;
+	font-weight:bold
+}
+.tabela{
+	font-size:21px;
+	text-align:  center;
+	background-image:url(../imgs/fund.jpg); 
+	color:#FFF;
+}
+.colorido{
+	color:#FFF;
+	font-size: 14px; 
+	font-weight:bold;
+}
+.horario{		background-color:#333;	}
+.local{			background-color:#A22;	}
+.cimatech{
+				font-weight:bold;
+				background-color:#F96;
+}
+.cecompi{
+				font-weight:bold;
+				background-color:#9CB;
+}
+.dip{
+				font-size:18px;
+				background-color:#A58;
+}
+.amarelin{ background-color:#FC6}
+
